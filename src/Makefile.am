@@ -41,7 +41,7 @@ ed25519_SOURCES = \
 
 chacha_poly1305_SOURCES = \
 	chacha-poly1305/chacha.c chacha-poly1305/chacha.h \
-	chacha-poly1305/chacha-poly1305.c chacha-poly1305/chacha-poly1305.h \
+	chacha-poly1305/chachapoly.c chacha-poly1305/chachapoly.h \
 	chacha-poly1305/poly1305.c chacha-poly1305/poly1305.h
 
 if CONFIGURE_LZ4_BUILTIN
