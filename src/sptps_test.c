@@ -691,6 +691,8 @@ int main(int argc, char *argv[]) {
 						free(mykey);
 						free(hiskey);
 						return 1;
+					} else {
+						break;
 					}
 				}
 
