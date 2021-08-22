@@ -49,7 +49,7 @@ set AutoConnect no
 set Subnet 10.96.96.1
 EOF
 
-tinc bar <<EOF
+tinc bar --force <<EOF
 init bar
 set DeviceType dummy
 set Port $bar_port
@@ -89,7 +89,7 @@ send_with_timeout "$data" "" # Not even the ID should be sent when the first pac
 echo [STEP] No splicing allowed
 
 tinc bar stop
-tinc bar del ExperimentalProtocol
+tinc bar --force del ExperimentalProtocol
 
 create_script bar subnet-up
 start_tinc bar
@@ -108,8 +108,8 @@ tinc foo stop
 
 echo [STEP] Test splicing again with legacy protocol
 
-tinc foo set ExperimentalProtocol no
-tinc bar set ExperimentalProtocol no
+tinc foo --force set ExperimentalProtocol no
+tinc bar --force set ExperimentalProtocol no
 
 create_script foo subnet-up
 start_tinc foo

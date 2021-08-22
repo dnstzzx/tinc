@@ -29,7 +29,7 @@ tinc bar add ConnectTo foo
 
 echo [STEP] Foo 1.1, bar 1.0
 
-tinc bar set ExperimentalProtocol no
+tinc bar --force set ExperimentalProtocol no
 tinc foo del bar.Ed25519PublicKey
 tinc bar del foo.Ed25519PublicKey
 
@@ -53,7 +53,7 @@ test -z "$(tinc bar get foo.Ed25519PublicKey)"
 
 echo [STEP] Foo 1.1, bar upgrades to 1.1
 
-tinc bar del ExperimentalProtocol
+tinc bar --force del ExperimentalProtocol
 
 start_tinc foo
 start_tinc bar
@@ -72,7 +72,7 @@ test -n "$(tinc bar get foo.Ed25519PublicKey)"
 
 echo [STEP] Bar downgrades, must no longer be allowed to connect
 
-tinc bar set ExperimentalProtocol no
+tinc bar --force set ExperimentalProtocol no
 
 create_script foo subnet-up
 start_tinc foo
