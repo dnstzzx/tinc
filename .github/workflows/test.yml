@@ -162,6 +162,7 @@ jobs:
           - debian:bullseye
           - debian:testing
           - ubuntu # current LTS
+          - ubuntu:18.04
           - ubuntu:rolling # latest
     container:
       image: ${{ matrix.os }}
