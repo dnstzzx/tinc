@@ -163,6 +163,7 @@ jobs:
           - debian:testing
           - ubuntu # current LTS
           - ubuntu:18.04
+          - ubuntu:16.04
           - ubuntu:rolling # latest
     container:
       image: ${{ matrix.os }}
